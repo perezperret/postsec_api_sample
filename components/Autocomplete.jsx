@@ -43,20 +43,24 @@ class Autocomplete extends React.Component {
 
   render() {
     return (
-      <div>
-        <ReactAutocomplete
-          items={this.state.found}
-          value={this.state.query}
-          onChange={this.handleChange}
-          onSelect={this.handleSelect}
-          getItemValue={item => item.name}
-          renderItem={(item, isHightlighted) => <div style={{color: isHightlighted ? 'blue' : 'black'}}>{item.name}</div>}
-        />
-        <div>
-          <h3>Selected:</h3>
-          <div>
-            {this.state.selected}
-          </div>
+      <div className="info-box info-box-warning">
+        <h4>Where did you go to school?</h4>
+        <div className="form-group">
+          <label className="form-label">Search</label>
+          <ReactAutocomplete
+            items={this.state.found}
+            value={this.state.query}
+            onChange={this.handleChange}
+            onSelect={this.handleSelect}
+            getItemValue={item => item.name}
+            renderItem={(item, isHightlighted) => <div style={{color: isHightlighted ? 'blue' : 'black'}}>{item.name}</div>}
+            wrapperProps={{ className: 'w-100' }}
+            inputProps={{ className: 'form-input' }}
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Selected:</label>
+          <textarea readOnly rows="10" className="form-input" value={this.state.selected} />
         </div>
       </div>
     )
