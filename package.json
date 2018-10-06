@@ -5,6 +5,10 @@
   "main": "index.js",
   "author": "perezperret@gmail.com",
   "license": "MIT",
+  "scripts": {
+    "build": "yarn && parcel build index.html && cp _redirects dist/_redirects",
+    "dev": "node devServer.js"
+  },
   "dependencies": {
     "react": "^16.5.2",
     "react-autocomplete": "^1.8.1",
