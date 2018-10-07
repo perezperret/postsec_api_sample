@@ -1,0 +1,24 @@
+.brand-link {
+  display: block;
+  color: $black;
+  border: 2px solid $gray-dark;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.brand-link-tagline {
+  margin-bottom: 4px;
+}
+
+.brand-link-logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 8px;
+
+  &-img {
+    margin-right: 8px;
+  }
+}

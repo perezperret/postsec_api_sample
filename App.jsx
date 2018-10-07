@@ -3,12 +3,12 @@ import React from 'react'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
-import Autocomplete from './components/Autocomplete'
+import Form from './components/Form'
 
 const App = () => (
   <div className="app-container">
     <Header />
-    <Autocomplete />
+    <Form />
     <Footer />
   </div>
 )

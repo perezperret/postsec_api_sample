@@ -1,0 +1,13 @@
+.info-box {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 16px;
+  border: 2px solid;
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  &-info {
+    border-color: blue;
+    background-color: $blue-light
+  }
+}

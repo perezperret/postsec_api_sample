@@ -1,0 +1,23 @@
+.row {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-left: -4px;
+  margin-right: -4px;
+
+  & > .col {
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  & > .col-auto {
+    position: relative;
+    box-sizing: border-box;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}

@@ -1,19 +1,5 @@
 import React from 'react'
-
-import logos from '../images/logos'
-
-const BrandLogo = ({ width, brand }) => (
-  <img src={logos[brand]} className="brand-logo" style={{ width: width }} />
-)
-
-const TechTag = ({ tagline, linkUrl, brand, brandName }) => (
-  <a className="techtag" target="_blank" href={linkUrl}>
-    <div className="tagline">{tagline}</div>
-    <div className="brand">
-      <BrandLogo brand={brand} width="30px"/> {brandName}
-    </div>
-  </a>
-)
+import BrandLink from './BrandLink'
 
 const API_TECH = [
   { tagline: 'Built with', linkUrl: 'https://luckyframework.org', brand: 'lucky', brandName: 'Lucky' },
@@ -30,17 +16,19 @@ const SAMPLE_TECH = [
 const Footer = () => (
   <div className="footer">
     <div className="row">
-      <TechTag tagline="Built by" linkUrl="https://perezperret.com" brand="perezperret" brandName="perezperret" />
+      <div className="col-auto">
+        <BrandLink tagline="Built by" linkUrl="https://perezperret.com" brand="perezperret" brandName="perezperret" />
+      </div>
     </div>
 
-    <h4 className="tech-title">API</h4>
+    <h4 className="section-title">API</h4>
     <div className="row">
-      {API_TECH.map(tech => <div key={tech.brand} className="col"><TechTag {...tech}/></div>)}
+      {API_TECH.map(tech => <div key={tech.brand} className="col"><BrandLink {...tech}/></div>)}
     </div>
 
-    <h4 className="tech-title">Sample</h4>
+    <h4 className="section-title">Sample</h4>
     <div className="row">
-      {SAMPLE_TECH.map(tech => <div key={tech.brand} className="col"><TechTag {...tech}/></div>)}
+      {SAMPLE_TECH.map(tech => <div key={tech.brand} className="col"><BrandLink {...tech}/></div>)}
     </div>
   </div>
 )
