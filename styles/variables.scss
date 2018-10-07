@@ -1,5 +1,9 @@
 $black: black;
 $white: white;
-$gray-light: lighten(black, 80%);
-$gray-dark: lighten(black, 60%);
-$blue-light: lighten(blue, 40%);
+$gray: lighten($black, 60%);
+$blue: blue;
+$yellow: yellow;
+
+$gray-light: lighten($black, 80%);
+$blue-light: lighten($blue, 40%);
+$yellow-light: lighten($yellow, 40%);

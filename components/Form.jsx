@@ -10,16 +10,16 @@ class Form extends React.Component {
   }
 
   handleSelect(item) {
-    const selected = JSON.stringify(item, null, 2)
+    const selected = item ? JSON.stringify(item, null, 2) : ''
     this.setState({ selected })
   }
 
   render() {
     return (
-      <div className="info-box info-box-info">
+      <div className="info-box info-box-warning">
         <h4>Where did you go to school?</h4>
         <div className="form-group">
-          <label className="form-label">Search</label>
+          <label className="form-label">Search:</label>
           <Autocomplete onSelect={this.handleSelect} />
         </div>
         <div className="form-group">

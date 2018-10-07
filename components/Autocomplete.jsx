@@ -35,6 +35,7 @@ class Autocomplete extends React.Component {
   handleSearch(query) {
     if (!query) {
       this.setState({ found: [] })
+      this.props.onSelect(null)
       return
     }
 
