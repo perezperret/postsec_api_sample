@@ -4,9 +4,21 @@ import Autocomplete from './Autocomplete'
 class Form extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { selected: '' }
+    this.state = { selected: '', awake: false }
 
     this.handleSelect = this.handleSelect.bind(this)
+  }
+
+  componentDidMount() {
+    this.wakeServerUp()
+  }
+
+  wakeServerUp(retries = 5) {
+    fetch('/api')
+    .then(() => { this.setState({ awake: true })})
+    .catch(() => {
+      if (retries > 0) { this.wakeServerUp(retries - 1) }
+    })
   }
 
   handleSelect(item) {
@@ -20,7 +32,11 @@ class Form extends React.Component {
         <h4>Where did you go to school?</h4>
         <div className="form-group">
           <label className="form-label">Search:</label>
-          <Autocomplete onSelect={this.handleSelect} />
+          {
+            this.state.awake
+            ? <Autocomplete onSelect={this.handleSelect} />
+            : <input className="form-input" disabled={true} placeholder="Wait while the API server wakes up..." />
+          }
         </div>
         <div className="form-group">
           <label className="form-label">Selected:</label>
