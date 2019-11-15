@@ -2,7 +2,7 @@ import React from 'react'
 import ReactAutocomplete from 'react-autocomplete'
 
 const AutocompleteItem = (item, isHighlighted) => (
-  <div key={item.name} style={{ background: isHighlighted ? 'lightblue' : 'white' }}>{item.name}</div>
+  <div key={item.ipeds_id} style={{ background: isHighlighted ? 'lightblue' : 'white' }}>{item.name}</div>
 )
 
 const AutocompleteMenu = (items, value, style) => (
@@ -22,7 +22,7 @@ class Autocomplete extends React.Component {
     this.handleSearch = this.handleSearch.bind(this)
   }
 
-  handleSelect(value, item) {
+  handleSelect(_value, item) {
     this.setState({ query: item.name })
     this.props.onSelect(item)
   }
