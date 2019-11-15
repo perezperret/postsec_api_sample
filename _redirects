@@ -1,1 +1,1 @@
-/api/*  http://postsecapi.herokuapp.com/:splat  200
+/api/*  http://postsec-api-rails.herokuapp.com/:splat  200
